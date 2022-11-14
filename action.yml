@@ -3,8 +3,7 @@ description: 'Closes pull requests'
 inputs:
     github-token:
         description: 'The github token'
-        required: false
-        default: ${{ secrets.GITHUB_TOKEN }}
+        required: true
     authors-overriding-closing:
         description: 'Comma separated string of authors (github usernames) that can override the closing of a pull request.'
         required: false
