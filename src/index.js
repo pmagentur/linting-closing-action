@@ -12,7 +12,12 @@ async function main() {
     }
 
     const pullRequest = github.context.payload.pull_request
-    await closer.closePullRequest(pullRequest.number, github.context.repo.owner, github.context.repo.repo);
+    await closer.closePullRequest(
+        pullRequest.number,
+        github.context.repo.owner,
+        github.context.repo.repo,
+        core.getInput('closing-comment')
+    );
 }
 
 main().catch((error) => core.setFailed(error.message));

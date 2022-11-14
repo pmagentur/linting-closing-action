@@ -24,10 +24,10 @@ module.exports = class Closer {
     }
 
     async _addCommentToPullRequest(number, owner, repo, message) {
-        await this.octokit.rest.pulls.createComment({
+        await this.octokit.rest.issues.createComment({
             owner,
             repo,
-            pull_number: number,
+            issue_number: number,
             body: message
         });
     }
