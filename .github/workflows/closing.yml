@@ -1,0 +1,50 @@
+name: Pull Request checks
+
+on:
+  workflow_call:
+    inputs:
+      authors-overriding-closing:
+        description: 'Comma separated string of authors (github usernames) that can override the closing of a pull request.'
+        required: false
+        type: string
+        default: ''
+      base-authors-overriding-closing:
+        description: 'Same as authors-overriding-closing but will be added additionally. Set empty to remove our basic authors.'
+        required: false
+        type: string
+        default: 'pmSven,pmMarcel,pmAram'
+      override-closing-comment:
+        description: 'The comment that is needed to override the closing of a pull request.'
+        required: false
+        type: string
+        default: 'LintingIsFine'
+
+jobs:
+  find-comment:
+    name: Find override comment
+    runs-on: ubuntu-latest
+    steps:
+      - name: Find Comment Action
+        uses: peter-evans/find-comment@v2
+        id: findComment
+        with:
+          issue-number: ${{ github.event.number }}
+          body-includes: ${{ inputs.override-closing-comment }}
+          direction: last
+      - name: Verify authorised Comment Author
+        run: |
+          if [[ "${{ steps.findComment.outputs.comment-author }}" != "" ]] && [[ '${{ inputs.authors-overriding-closing }},${{ inputs.base-authors-overriding-closing }}' == *"${{ steps.findComment.outputs.comment-author }}"* ]]
+          then
+            exit 0
+          else
+            exit 1
+          fi
+  close-pr:
+    needs: [ find-comment ]
+    if: always() && (needs.find-comment.result == 'failure')
+    name: ClosePR
+    runs-on: ubuntu-latest
+    steps:
+      - uses: superbrothers/close-pull-request@v3
+        with:
+          comment: "We do not accept PRs with Linting errors. If you have any questions, please feel free to contact to approvers from doc/Skippers file."
