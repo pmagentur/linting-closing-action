@@ -1,0 +1,26 @@
+name: Linting Closing Action
+id: 'ari:cloud:compass:fc30d626-c7c8-44e4-9b1c-e1cc1894dd1e:component/f75966b7-3ca1-4049-bdb7-40fe65ef2a2a/53c4c706-bccc-47b5-bf3c-b5ec5a222fbf'
+description: This is the actual closing action which contains only the logic for closing a pull request.
+configVersion: 1
+typeId: SERVICE
+ownerId: 'ari:cloud:teams::team/f4015c13-0008-4222-b292-b0e00807b2cd'
+fields:
+  lifecycle: Active
+  tier: 3
+links:
+  - name: null
+    type: REPOSITORY
+    url: 'https://github.com/pmagentur/linting-closing-action'
+  - name: Slack
+    type: CHAT_CHANNEL
+    url: 'https://app.slack.com/client/T0G2FAWMR/C04NXD0Q1FA'
+  - name: Confluence
+    type: DOCUMENT
+    url: 'https://pmsoftware.atlassian.net/wiki/spaces/EN/pages/3643342957/WIP+Linting+Github'
+relationships: {}
+labels:
+  - linting
+customFields: null
+
+# Learn more about formatting compass.yml:
+# https://go.atlassian.com/compass-yml-format
