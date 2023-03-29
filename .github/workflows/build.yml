@@ -1,0 +1,16 @@
+name: build
+
+concurrency: production
+
+on:
+  push:
+    branches:
+      - master
+      
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: my-step
+        run: echo "Build will appear in compass"
