@@ -1,0 +1,22 @@
+# These owners will be the default owners for everything in
+# the repo. Unless a later match takes precedence,
+# they will be requested for review when someone opens a pull request.
+*           @pmMarcel @pmSven    @pmAram @pm-alexander @pm-dennis @pm-florian @pm-jakob @pm-mohamed @pm-moritz @pmNilam @pmwaldemar @pm-andy @pmmarco @pm-mariusa 
+
+*.js        @pmMarcel @pmSven    @pm-dennis @pm-florian @pm-jakob @pm-mohamed @pm-moritz @pmNilam @pmwaldemar @pm-andy @pmmarco @pm-mariusa 
+*.ts        @pmMarcel @pmSven    @pm-dennis @pm-florian @pm-jakob @pm-mohamed @pm-moritz @pmNilam @pmwaldemar @pm-andy @pmmarco @pm-mariusa 
+
+*.css       @pmMarcel @pmSven    @pm-dennis @pm-florian @pm-mohamed @pmNilam @pmwaldemar @pm-andy @pm-moritz
+*.scss      @pmMarcel @pmSven    @pm-dennis @pm-florian @pm-mohamed @pmNilam @pmwaldemar @pm-andy @pm-moritz
+*.sass      @pmMarcel @pmSven    @pm-dennis @pm-florian @pm-mohamed @pmNilam @pmwaldemar @pm-andy @pm-moritz
+*.less      @pmMarcel @pmSven    @pm-dennis @pm-florian @pm-mohamed @pmNilam @pmwaldemar @pm-andy @pm-moritz
+
+*.cs        @pmMarcel @pmSven    @pm-alexander @pm-florian @pm-jakob @pm-moritz @pm-andy
+*.java      @pmMarcel @pmSven    @pmmarco @pm-mariusa @pm-andy  
+*.kt        @pmMarcel @pmSven
+
+*.py        @pmMarcel @pmSven    @pmAram @pm-jakob  
+*.php       @pmMarcel @pmSven    @pm-alexander @pm-dennis @pm-jakob @pm-moritz @pmNilam @pmwaldemar
+
+.github/    @pmMarcel @pmSven    @pmAram @pm-hovhannes @pm-nico
+Dockerfile  @pmMarcel @pmSven    @pmAram @pm-hovhannes @pm-nico @pm-dennis
